@@ -1,0 +1,13 @@
+.buc {
+  background-color: aqua;
+  padding: 5px;
+  margin: 10px;
+}
+
+.fullbk {
+  display: flex;
+}
+
+.pr {
+  font-size: 35px;
+}

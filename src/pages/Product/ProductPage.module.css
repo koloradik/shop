@@ -1,0 +1,53 @@
+.tow {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px;
+}
+
+.nem {
+  font-size: 35px;
+}
+
+.bb {
+  height: 70px;
+  width: 120px;
+  background-color: chartreuse;
+  cursor: pointer;
+  font-size: 25px;
+}
+
+.bb:hover {
+  cursor: pointer;
+  background-color: rgb(3, 192, 3);
+}
+
+.hr {
+  height: 2px;
+  background-color: black;
+}
+
+.op {
+  margin: 25px;
+}
+
+.t {
+  margin: 25px;
+  text-decoration: underline;
+}
+
+.mo {
+  font-size: 25px;
+}
+
+.o {
+  margin: 25px;
+  text-decoration: underline;
+}
+
+.no {
+  font-size: 25px;
+}
+.prodid {
+  font-size: 20px;
+  margin-left: 40px;
+}

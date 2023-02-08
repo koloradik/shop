@@ -1,0 +1,47 @@
+.pris {
+  font-size: 25px;
+  color: red;
+}
+
+.mod {
+  font-size: 20px;
+}
+
+.skidka {
+  text-decoration: line-through;
+}
+
+.full {
+  display: flex;
+  justify-content: space-between;
+}
+
+.star {
+  color: gold;
+  background-color: chocolate;
+}
+
+.img {
+  height: 350px;
+  width: 265px;
+  background-color: blueviolet;
+  margin: 15px;
+}
+
+.btn {
+  background-color: chartreuse;
+  color: black;
+  height: 50px;
+  width: 150px;
+  font-size: 25px;
+}
+
+.prod {
+  width: 300px;
+  height: 500px;
+  background-color: white;
+  margin: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

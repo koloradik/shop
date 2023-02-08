@@ -1,0 +1,20 @@
+body {
+  background-color: lightgrey;
+  margin: 0;
+  padding: 0;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background-color: rgb(3, 192, 3);
+}
+
+.header {
+  height: 100px;
+  background-color: blueviolet;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  color: white;
+  justify-content: space-between;
+}

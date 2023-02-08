@@ -1,15 +1,5 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { Switch, Route } from 'wouter'
-import App from './App'
-import Help from './Help'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <Switch>
-    <Route path = "/" component={App} />
-    <Route path='/help' component={Help} />
-  </Switch>
-
-  
-
-)
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);

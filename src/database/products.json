@@ -1,51 +1,58 @@
-    [
-        {
-            "id": 123,
-            "type": "Strategy",
-            "model": "Cosaks",
-            "price": 279,
-            "discount": 0
-        },
-        {
-            "id": 2121,
-            "type": "With open world",
-            "model": "GTA V",
-            "price": 650,
-            "discount": 0.1
-        },
-        {
-            "id": 32313,
-            "type": "Horror",
-            "model": "Five Nights at Freddy's: 7",
-            "price": 569,
-            "discount": 0
-        },
-        {
-            "id": 432131,
-            "type": "Shooter",
-            "model": "Rust",
-            "price": 650,
-            "discount": 0
-        },
-        {
-            "id": 532,
-            "type": "sports simulator",
-            "model": "FIFA 23",
-            "price": 350,
-            "discount": 0
-        },
-        {
-            "id": 621,
-            "type": "",
-            "model": "My summer car",
-            "price": 230,
-            "discount": 0
-        },
-        {
-            "id": 1354,
-            "type": "Shooter",
-            "model": "Metro: Last Light Redux",
-            "price": 280,
-            "discount": 0
-        }
-    ]
+[
+  {
+    "id": 123,
+    "type": "Strategy",
+    "model": "Cosaks",
+    "price": 279,
+    "discount": 0,
+    "old": "30 ноября 2000 г."
+  },
+  {
+    "id": 2121,
+    "type": "With open world",
+    "model": "GTA V",
+    "price": 650,
+    "discount": 0.4,
+    "old": "17 сентября 2013 г."
+  },
+  {
+    "id": 32313,
+    "type": "Horror",
+    "model": "Five Nights at Freddy's 4",
+    "price": 569,
+    "discount": 0,
+    "old": "23 июля 2015 г."
+  },
+  {
+    "id": 432131,
+    "type": "Shooter",
+    "model": "Rust",
+    "price": 650,
+    "discount": 1,
+    "old": "11 декабря 2013 г."
+  },
+  {
+    "id": 532,
+    "type": "Sports simulator",
+    "model": "FIFA 23",
+    "price": 350,
+    "discount": 0.2,
+    "old": "26 сентября 2022 г."
+  },
+  {
+    "id": 621,
+    "type": "With open world",
+    "model": "My summer car",
+    "price": 230,
+    "discount": 0,
+    "old": "24 октября 2016 г."
+  },
+  {
+    "id": 1354,
+    "type": "Shooter",
+    "model": "Metro: Last Light Redux",
+    "price": 280,
+    "discount": 0,
+    "old": "14 мая 2013 г."
+  }
+]
