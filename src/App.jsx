@@ -1,6 +1,6 @@
 import { useState } from "react";
 import products from "./database/products.json";
-import { Route, Switch, useLocation } from "wouter";
+import { Link, Route, Switch, useLocation } from "wouter";
 import Footer from "./components/Footer/Footer";
 import Help from "./pages/Help/Help";
 import Home from "./pages/Home/Home";
@@ -10,6 +10,7 @@ import Bucket from "./components/Bucket/Bucket";
 import styles from "./App.module.css";
 import ProductPage from "./pages/Product/ProductPage";
 import SearchPage from "./pages/SearchPage/SearchPage";
+import ProfilePage from "./pages/ProfilePage/ProfilePage";
 
 const App = () => {
   // bucket states
@@ -38,12 +39,12 @@ const App = () => {
 
   // search states
   const [search, setSearch] = useState("");
-  const [_, setLocation] = useLocation();
+  const [location, setLocation] = useLocation();
 
   return (
     <div>
       <div className={styles.header}>
-        <h1>GORA</h1>
+        <Link href="/"><h1 className={styles.magazname}>GORA</h1></Link>
         <input
           type="text"
           placeholder="Введите ваш запрос"
@@ -76,6 +77,11 @@ const App = () => {
           removeFromBucketById={removeFromBucketById}
         />
       ) : null}
+      {location !== "/profile" ?
+        <Link href="/profile" >
+          <button className={styles.profilebutton}>Profile</button>
+        </Link> : null}
+
 
       <Switch>
         <Route
@@ -91,6 +97,7 @@ const App = () => {
         <Route path="/search/:query">
           {(params) => <SearchPage query={search} products={products} />}
         </Route>
+        <Route path="/profile" component={() => <ProfilePage name={name}/>} />
       </Switch>
 
       <Footer />

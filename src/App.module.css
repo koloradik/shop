@@ -18,3 +18,14 @@ body {
   color: white;
   justify-content: space-between;
 }
+.profilebutton{
+  margin-left: 10px;
+  height: 40px;
+  width: 150px;
+  background-color: rgba(96, 148, 225, 0.7);
+  font-size: 25px;
+}
+.magazname{
+  cursor: pointer;
+  margin-left: 10px;
+}

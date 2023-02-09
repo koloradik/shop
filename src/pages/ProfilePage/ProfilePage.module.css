@@ -1,0 +1,17 @@
+.userimg{
+   margin-left: 10px;
+}
+hr{
+   height: 2px;
+   background-color: black;
+}
+.wrapper{
+   display: flex;
+}
+.name{
+   margin-left: 70px;
+   font-size: 30px;
+}
+.popolnb{
+   display: block;
+}

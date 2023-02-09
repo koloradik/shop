@@ -7,7 +7,7 @@ const Product = (props) => {
       <div className={styles.img}></div>
       <div>
         <Link href={`/product/${props.product.id}`}>
-          <div className={styles.mod}>{props.product.model},</div>
+          <div className={styles.mod}>{props.product.model}</div>
         </Link>
 
         <div className={styles.pris}>
