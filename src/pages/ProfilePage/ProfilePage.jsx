@@ -7,34 +7,42 @@ const ProfilePage = (props) => {
     const [balansP, setBalansP] = useState("")
 
     const toggleBalansShow = () => {
-        setBalansShow(prev => !prev)    
+        setBalansShow(prev => !prev)
     }
     const popoln = () => {
         const p = Number(balansP)
 
-       if (!isNaN(p)){
-        setBalans (balans+p)
-       }
+        if (!isNaN(p)) {
+            setBalans(balans + p)
+        }
 
-        
+
     }
 
-    return <div>
+    return <div>{props.name ? <div>
 
         <hr />
         <div className={styles.wrapper}>
             <img src="/User.png" alt="" className={styles.userimg} />
-            <div className={styles.name}>{props.name}</div>
+            <div className={styles.name}>Имя: {props.name}</div>
 
         </div>
         <hr />
-        <div>Текущий баланс: {balans}₴</div>
+        <div className={styles.tekb}>Текущий баланс: {balans}₴</div>
         <button className={styles.popolnb} onClick={toggleBalansShow}>Пополнить баланс</button>
-         {balansShow === true ?<div>
-            <input type="text" value={balansP} onChange={(event) => setBalansP(event.target.value)}/>
-            <button onClick={popoln}>Пополнить</button>
-        </div>: null}
+        {balansShow === true ? <div>
+            <input  
+            placeholder="Введите сумму пополнения"
+            className={styles.inp} 
+            type="text" value={balansP}
+            onChange={(event) => setBalansP(event.target.value)} 
+            />
+            <button className={styles.pop} onClick={popoln}>Пополнить</button>
+        </div> : null}
         <hr />
+    </div> : <div className={styles.neavt}>Вы не авторизованы(</div>}
+
+   
     </div>
 }
 

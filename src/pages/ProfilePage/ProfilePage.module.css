@@ -1,17 +1,64 @@
-.userimg{
+.userimg {
    margin-left: 10px;
 }
-hr{
+
+hr {
    height: 2px;
    background-color: black;
 }
-.wrapper{
+
+.wrapper {
    display: flex;
 }
-.name{
+
+.name {
    margin-left: 70px;
    font-size: 30px;
 }
-.popolnb{
+
+.popolnb {
    display: block;
+   height: 50px;
+   margin-left: 10px;
+   font-size: 20px;
+   background-color: rgb(2, 249, 249);
+   cursor: pointer;
+
+}
+
+.popolnb:hover {
+   background-color: rgb(0, 149, 255);
+}
+
+.tekb {
+   font-size: 30px;
+   font-weight: bold;
+   margin-left: 10px;
+
+}
+
+.neavt {
+   font-size: 30px;
+   margin-left: 10px;
+}
+
+.inp {
+   margin-left: 10px;
+   height: 30px;
+   width: 260px;
+   margin-top: 10px;
+   font-size: 20px;
+
+}
+
+.pop {
+   height: 35px;
+   width: 150px;
+   font-size: 20px;
+   background-color: rgb(140, 244, 36);
+   cursor: pointer;
+}
+
+.pop:hover {
+   background-color: rgb(189, 244, 36);
 }

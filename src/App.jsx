@@ -14,6 +14,7 @@ import ProfilePage from "./pages/ProfilePage/ProfilePage";
 
 const App = () => {
   // bucket states
+  //const [balans, setBalans] = useState(0)
   const [bucket, setBucket] = useState([]);
   const [showBucket, setShowBucket] = useState(false);
 
@@ -77,11 +78,14 @@ const App = () => {
           removeFromBucketById={removeFromBucketById}
         />
       ) : null}
-      {location !== "/profile" ?
-        <Link href="/profile" >
-          <button className={styles.profilebutton}>Profile</button>
-        </Link> : null}
-
+      <div>
+        {location !== "/profile" ?
+          <Link href="/profile" >
+            <div className={styles.bap}><button className={styles.profilebutton}>Profile</button>
+              <Link href="/profile"><div className={styles.bal}>Баланс: {}</div></Link>
+            </div>
+          </Link> : null}
+      </div>
 
       <Switch>
         <Route
@@ -97,7 +101,7 @@ const App = () => {
         <Route path="/search/:query">
           {(params) => <SearchPage query={search} products={products} />}
         </Route>
-        <Route path="/profile" component={() => <ProfilePage name={name}/>} />
+        <Route path="/profile" component={() => <ProfilePage name={name} />} />
       </Switch>
 
       <Footer />

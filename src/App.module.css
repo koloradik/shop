@@ -24,8 +24,17 @@ body {
   width: 150px;
   background-color: rgba(96, 148, 225, 0.7);
   font-size: 25px;
+  cursor: pointer;
 }
 .magazname{
   cursor: pointer;
   margin-left: 10px;
+}
+.bap{
+  display: flex;
+  justify-content: space-between;
+}
+.bal{
+  margin-right: 10px;
+  font-size: 23px;
 }

@@ -1,6 +1,6 @@
 [
   {
-    "id": 123,
+    "id": 1,
     "type": "Strategy",
     "model": "Cosaks",
     "price": 279,
@@ -8,15 +8,15 @@
     "old": "30 ноября 2000 г."
   },
   {
-    "id": 2121,
+    "id": 2,
     "type": "With open world",
     "model": "GTA V",
     "price": 650,
-    "discount": 0.4,
+    "discount": 0.1,
     "old": "17 сентября 2013 г."
   },
   {
-    "id": 32313,
+    "id": 3,
     "type": "Horror",
     "model": "Five Nights at Freddy's 4",
     "price": 569,
@@ -24,15 +24,15 @@
     "old": "23 июля 2015 г."
   },
   {
-    "id": 432131,
+    "id": 4,
     "type": "Shooter",
     "model": "Rust",
     "price": 650,
-    "discount": 1,
+    "discount": 0,
     "old": "11 декабря 2013 г."
   },
   {
-    "id": 532,
+    "id": 5,
     "type": "Sports simulator",
     "model": "FIFA 23",
     "price": 350,
@@ -40,7 +40,7 @@
     "old": "26 сентября 2022 г."
   },
   {
-    "id": 621,
+    "id": 6,
     "type": "With open world",
     "model": "My summer car",
     "price": 230,
@@ -48,11 +48,75 @@
     "old": "24 октября 2016 г."
   },
   {
-    "id": 1354,
+    "id": 7,
     "type": "Shooter",
     "model": "Metro: Last Light Redux",
     "price": 280,
     "discount": 0,
     "old": "14 мая 2013 г."
+  },
+  {
+    "id": 8,
+    "type": "Military simulator",
+    "model": "ARMA III",
+    "price": 865,
+    "discount": 0,
+    "old": "12 сентября 2013 г."
+  },
+  {
+    "id": 9,
+    "type": "Simulator",
+    "model": "Farming Simulator 22",
+    "price": 729,
+    "discount": 0,
+    "old": "21 ноября 2021 г."
+  },
+  {
+    "id": 10,
+    "type": "Shooter",
+    "model": "Call of Duty®: Modern Warfare® II",
+    "price": 2339,
+    "discount": 0,
+    "old": "10 ноября 2009 г."
+  },
+  {
+    "id": 11,
+    "type": "Simulator",
+    "model": "Fallout 4",
+    "price": 350,
+    "discount": 0,
+    "old": "10 ноября 2015 г."
+  },
+  {
+    "id": 12,
+    "type": "Simulator",
+    "model": "BeamNG.drive",
+    "price": 330,
+    "discount": 0,
+    "old": "29 мая. 2015"
+  },
+  {
+    "id": 13,
+    "type": "Simulator",
+    "model": "Forza Horizon 4",
+    "price": 799,
+    "discount": 0.2,
+    "old": "9 мар. 2021"
+  },
+  {
+    "id": 14,
+    "type": "adventures",
+    "model": "Spider-Man: Miles Morales",
+    "price": 1499,
+    "discount": 0.3,
+    "old": "18 ноя. 2022"
+  },
+  {
+    "id": 15,
+    "type": "With open world",
+    "model": "Sonic Frontiers",
+    "price": 1600,
+    "discount": 0.4,
+    "old": "8 ноя. 2022"
   }
 ]
