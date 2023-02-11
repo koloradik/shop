@@ -1,8 +1,9 @@
 import { useState } from "react"
+import { Button } from "react-daisyui"
 import styles from "./ProfilePage.module.css"
 
 const ProfilePage = (props) => {
-    const [balans, setBalans] = useState(0)
+    //const [balans, setBalans] = useState(0)
     const [balansShow, setBalansShow] = useState(false)
     const [balansP, setBalansP] = useState("")
 
@@ -13,7 +14,7 @@ const ProfilePage = (props) => {
         const p = Number(balansP)
 
         if (!isNaN(p)) {
-            setBalans(balans + p)
+            props.setBalans(props.balans + p)
         }
 
 
@@ -28,21 +29,22 @@ const ProfilePage = (props) => {
 
         </div>
         <hr />
-        <div className={styles.tekb}>Текущий баланс: {balans}₴</div>
+        <div className={styles.tekb}>Текущий баланс: {props.balans}₴</div>
         <button className={styles.popolnb} onClick={toggleBalansShow}>Пополнить баланс</button>
         {balansShow === true ? <div>
-            <input  
-            placeholder="Введите сумму пополнения"
-            className={styles.inp} 
-            type="text" value={balansP}
-            onChange={(event) => setBalansP(event.target.value)} 
+            <input
+                placeholder="Введите сумму пополнения"
+                className={styles.inp}
+                type="text" value={balansP}
+                onChange={(event) => setBalansP(event.target.value)}
             />
-            <button className={styles.pop} onClick={popoln}>Пополнить</button>
+            {/* <button className={styles.pop} onClick={popoln}>Пополнить</button> */}
+            <Button>wdasdw</Button>
         </div> : null}
         <hr />
     </div> : <div className={styles.neavt}>Вы не авторизованы(</div>}
 
-   
+
     </div>
 }
 

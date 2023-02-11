@@ -11,10 +11,11 @@ import styles from "./App.module.css";
 import ProductPage from "./pages/Product/ProductPage";
 import SearchPage from "./pages/SearchPage/SearchPage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
+import { Input } from "react-daisyui";
 
 const App = () => {
   // bucket states
-  //const [balans, setBalans] = useState(0)
+  const [balans, setBalans] = useState(0)
   const [bucket, setBucket] = useState([]);
   const [showBucket, setShowBucket] = useState(false);
 
@@ -44,9 +45,10 @@ const App = () => {
 
   return (
     <div>
-      <div className={styles.header}>
-        <Link href="/"><h1 className={styles.magazname}>GORA</h1></Link>
-        <input
+      
+      <div className="bg-amber-400 flex justify-between p-5">
+        <Link href="/"><h1 className="text-6xl font-semibold ml-2 text-black" >GORA</h1></Link>
+        <Input className="bg-neutral-800 text-lg"
           type="text"
           placeholder="Введите ваш запрос"
           value={search}
@@ -82,7 +84,7 @@ const App = () => {
         {location !== "/profile" ?
           <Link href="/profile" >
             <div className={styles.bap}><button className={styles.profilebutton}>Profile</button>
-              <Link href="/profile"><div className={styles.bal}>Баланс: {}</div></Link>
+              <Link href="/profile"><div className={styles.bal}>Баланс: {balans}</div></Link>
             </div>
           </Link> : null}
       </div>
@@ -101,7 +103,8 @@ const App = () => {
         <Route path="/search/:query">
           {(params) => <SearchPage query={search} products={products} />}
         </Route>
-        <Route path="/profile" component={() => <ProfilePage name={name} />} />
+
+        <Route path="/profile" component={() => <ProfilePage balans={balans} setBalans={setBalans} name={name}/>}/>
       </Switch>
 
       <Footer />

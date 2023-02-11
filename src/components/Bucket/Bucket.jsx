@@ -3,10 +3,10 @@ import styles from "./Bucket.module.css";
 
 const Bucket = (props) => {
   return (
-    <div className={styles.buc}>
+    <div>
       <div>
         <div>
-          <h2>Корзина:</h2>
+          <h2 className="text-black">Корзина:</h2>
           {props.isAuth ? (
             props.bucket.length > 0 ? (
               props.bucket.map((product) => {
@@ -22,14 +22,10 @@ const Bucket = (props) => {
                 );
               })
             ) : (
-              <div>
-                <h2>Тут пусто</h2>
-              </div>
+              <h2 className="text-black">Тут пусто</h2>
             )
           ) : (
-            <div>
-              <h1>Авторизуйтесь чтобы использовать корзину</h1>
-            </div>
+            <h1 className="text-black">Авторизуйтесь чтобы использовать корзину</h1>
           )}
         </div>
       </div>
