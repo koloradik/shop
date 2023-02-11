@@ -11,7 +11,7 @@ import styles from "./App.module.css";
 import ProductPage from "./pages/Product/ProductPage";
 import SearchPage from "./pages/SearchPage/SearchPage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
-import { Input } from "react-daisyui";
+import { Button, Input } from "react-daisyui";
 
 const App = () => {
   // bucket states
@@ -46,7 +46,7 @@ const App = () => {
   return (
     <div>
       
-      <div className="bg-amber-400 flex justify-between p-5">
+      <div className="bg-red-600 flex justify-between p-5">
         <Link href="/"><h1 className="text-6xl font-semibold ml-2 text-black" >GORA</h1></Link>
         <Input className="bg-neutral-800 text-lg"
           type="text"
@@ -83,8 +83,8 @@ const App = () => {
       <div>
         {location !== "/profile" ?
           <Link href="/profile" >
-            <div className={styles.bap}><button className={styles.profilebutton}>Profile</button>
-              <Link href="/profile"><div className={styles.bal}>Баланс: {balans}</div></Link>
+            <div className={styles.bap}><Button className="ml-4 mt-4 bg-blue-700 hover:bg-blue-600">Profile</Button>
+              <Link href="/profile"><div className="ml-4 mt-4 text-2xl mr-4">Баланс: {balans}</div></Link>
             </div>
           </Link> : null}
       </div>

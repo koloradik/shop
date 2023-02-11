@@ -5,4 +5,4 @@ import App from "./App";
 import "./index.css"
 
 
-ReactDOM.createRoot(document.getElementById("root")).render(<Theme dataTheme="aqua"><App /></Theme>);
+ReactDOM.createRoot(document.getElementById("root")).render(<Theme dataTheme="synthwave"><App /></Theme>);

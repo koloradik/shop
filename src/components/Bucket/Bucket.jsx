@@ -3,7 +3,7 @@ import styles from "./Bucket.module.css";
 
 const Bucket = (props) => {
   return (
-    <div>
+    <div className="bg-amber-400 m-2">
       <div>
         <div>
           <h2 className="text-black">Корзина:</h2>
@@ -25,7 +25,9 @@ const Bucket = (props) => {
               <h2 className="text-black">Тут пусто</h2>
             )
           ) : (
-            <h1 className="text-black">Авторизуйтесь чтобы использовать корзину</h1>
+            <h1 className="text-black">
+              Авторизуйтесь чтобы использовать корзину
+            </h1>
           )}
         </div>
       </div>

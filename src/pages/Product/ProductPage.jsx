@@ -1,3 +1,4 @@
+import { Button } from "react-daisyui";
 import styles from "./ProductPage.module.css";
 
 const ProductPage = (props) => {
@@ -13,7 +14,7 @@ const ProductPage = (props) => {
 
       <div className={styles.tow}>
         <div className={styles.nem}> {product.model} </div>
-        <button className={styles.bb}>Buy</button>
+        <Button className="bg-green-700 w-24 h-14 hover:bg-green-400">Buy</Button>
       </div>
 
       <div>

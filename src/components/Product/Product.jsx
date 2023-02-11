@@ -1,14 +1,21 @@
+import { Button, Card } from "react-daisyui";
 import { Link } from "wouter";
 import styles from "./Product.module.css";
 
 const Product = (props) => {
   return (
-    <div className={styles.prod}>
-      <div className={styles.img}></div>
-      <div>
-        <Link href={`/product/${props.product.id}`}>
-          <div className={styles.mod}>{props.product.model}</div>
-        </Link>
+    <Card className="bg-white m-8 w-96 ">
+      <Card.Image
+        src="https://api.lorem.space/image/shoes?w=400&h=225"
+        alt="Shoes"
+      />
+
+      <Card.Body>
+        <Card.Title>
+          <Link href={`/product/${props.product.id}`}>
+            <span className="text-black">{props.product.model}</span>
+          </Link>
+        </Card.Title>
 
         <div className={styles.pris}>
           {props.product.discount > 0 ? (
@@ -24,14 +31,14 @@ const Product = (props) => {
             <div>{props.product.price}₴</div>
           )}
         </div>
-        <button
-          className={styles.btn}
-          onClick={() => props.onBuyButtonClick(props.product)}
-        >
-          Buy
-        </button>
-      </div>
-    </div>
+
+        <Card.Actions>
+          <Button className="w-36" onClick={() => props.onBuyButtonClick(props.product)}>
+            Buy
+          </Button>
+        </Card.Actions>
+      </Card.Body>
+    </Card>
   );
 };
 
