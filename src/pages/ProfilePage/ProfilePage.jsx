@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Button } from "react-daisyui"
+import { Button, Input } from "react-daisyui"
 import styles from "./ProfilePage.module.css"
 
 const ProfilePage = (props) => {
@@ -30,16 +30,15 @@ const ProfilePage = (props) => {
         </div>
         <hr />
         <div className={styles.tekb}>Текущий баланс: {props.balans}₴</div>
-        <button className={styles.popolnb} onClick={toggleBalansShow}>Пополнить баланс</button>
+        <Button className="bg-blue-700 hover:bg-blue-500 ml-49" onClick={toggleBalansShow}>Пополнить баланс</Button>
         {balansShow === true ? <div>
-            <input
+            <Input
                 placeholder="Введите сумму пополнения"
-                className={styles.inp}
+                className="bg-black"
                 type="text" value={balansP}
                 onChange={(event) => setBalansP(event.target.value)}
             />
-            {/* <button className={styles.pop} onClick={popoln}>Пополнить</button> */}
-            <Button>wdasdw</Button>
+             <Button className="bg-green-700 hover:bg-green-500" onClick={popoln}>Пополнить</Button>
         </div> : null}
         <hr />
     </div> : <div className={styles.neavt}>Вы не авторизованы(</div>}
