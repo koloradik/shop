@@ -1,5 +1,4 @@
 import { Link } from "wouter";
-import styles from "./Footer.module.css";
 
 const Footer = () => {
   return (
