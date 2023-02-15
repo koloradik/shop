@@ -1,6 +1,5 @@
 import { Link } from "wouter";
-import {Footer as DaisyFooter} from "react-daisyui"
-
+import { Footer as DaisyFooter } from "react-daisyui"
 const Footer = () => {
   return (
     // <div>
@@ -15,24 +14,21 @@ const Footer = () => {
 
     <DaisyFooter className="p-10 bg-neutral text-neutral-content">
       <div>
-        <DaisyFooter.Title>Services</DaisyFooter.Title>
+        {/* <DaisyFooter.Title>Services</DaisyFooter.Title>
         <a className="link link-hover">Branding</a>
         <a className="link link-hover">Design</a>
         <a className="link link-hover">Marketing</a>
-        <a className="link link-hover">Advertisement</a>
+        <a className="link link-hover">Advertisement</a> */}
       </div>
       <div>
-        <DaisyFooter.Title>Company</DaisyFooter.Title>
-        <a className="link link-hover">About us</a>
-        <a className="link link-hover">Contact</a>
-        <a className="link link-hover">Jobs</a>
-        <a className="link link-hover">Press kit</a>
+        <DaisyFooter.Title>Связь</DaisyFooter.Title>
+        <a href="https://t.me/madou181_krasnodar" className="link link-hover text-blue-600">Telegram</a>
+        <a href="https://ru.wikipedia.org/wiki/Viber" className="link link-hover text-purple-600">Viber</a>
+        <a href="https://www.instagram.com/reel/Cm_r1X6hKS-/?igshid=MWMzM2Q4ZmE=" className="link link-hover text-pink-600">Instagram</a>
       </div>
       <div>
-        <DaisyFooter.Title>Legal</DaisyFooter.Title>
-        <a className="link link-hover">Terms of use</a>
-        <a className="link link-hover">Privacy policy</a>
-        <a className="link link-hover">Cookie policy</a>
+        <DaisyFooter.Title>Поддержка</DaisyFooter.Title>
+        <a href="/help" className="link link-hover">Карта сайта</a>
       </div>
     </DaisyFooter>
   )

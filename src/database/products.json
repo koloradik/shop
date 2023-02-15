@@ -5,7 +5,8 @@
     "model": "Cosaks",
     "price": 279,
     "discount": 0,
-    "old": "30 ноября 2000 г."
+    "old": "30 ноября 2000 г.",
+    "src": "./products/cossaks.png"
   },
   {
     "id": 2,
@@ -13,7 +14,8 @@
     "model": "GTA V",
     "price": 650,
     "discount": 0.1,
-    "old": "17 сентября 2013 г."
+    "old": "17 сентября 2013 г.",
+    "src": "./products/gta v.png"
   },
   {
     "id": 3,
@@ -21,7 +23,8 @@
     "model": "Five Nights at Freddy's 4",
     "price": 569,
     "discount": 0,
-    "old": "23 июля 2015 г."
+    "old": "23 июля 2015 г.",
+    "src": "./products/five_n_4.png"
   },
   {
     "id": 4,
@@ -29,7 +32,8 @@
     "model": "Rust",
     "price": 650,
     "discount": 0,
-    "old": "11 декабря 2013 г."
+    "old": "11 декабря 2013 г.",
+    "src": "./products/rust.png"
   },
   {
     "id": 5,
@@ -37,7 +41,8 @@
     "model": "FIFA 23",
     "price": 350,
     "discount": 0.2,
-    "old": "26 сентября 2022 г."
+    "old": "26 сентября 2022 г.",
+    "src": "./products/fifa_23.png"
   },
   {
     "id": 6,
@@ -45,7 +50,8 @@
     "model": "My summer car",
     "price": 230,
     "discount": 0,
-    "old": "24 октября 2016 г."
+    "old": "24 октября 2016 г.",
+    "src": "./products/my-summer-car.png"
   },
   {
     "id": 7,
@@ -53,7 +59,8 @@
     "model": "Metro: Last Light Redux",
     "price": 280,
     "discount": 0,
-    "old": "14 мая 2013 г."
+    "old": "14 мая 2013 г.",
+    "src": "./products/metro.png"
   },
   {
     "id": 8,
@@ -61,7 +68,8 @@
     "model": "ARMA III",
     "price": 865,
     "discount": 0,
-    "old": "12 сентября 2013 г."
+    "old": "12 сентября 2013 г.",
+    "src": "./products/arma_iii.png"
   },
   {
     "id": 9,
@@ -69,7 +77,8 @@
     "model": "Farming Simulator 22",
     "price": 729,
     "discount": 0,
-    "old": "21 ноября 2021 г."
+    "old": "21 ноября 2021 г.",
+    "src": "./products/f-s-22.png"
   },
   {
     "id": 10,
@@ -77,7 +86,8 @@
     "model": "Call of Duty®: Modern Warfare® II",
     "price": 2339,
     "discount": 0,
-    "old": "10 ноября 2009 г."
+    "old": "10 ноября 2009 г.",
+    "src": "./products/call_of_duty.png"
   },
   {
     "id": 11,
@@ -85,7 +95,8 @@
     "model": "Fallout 4",
     "price": 350,
     "discount": 0,
-    "old": "10 ноября 2015 г."
+    "old": "10 ноября 2015 г.",
+    "src": "./products/fallout_4.png"
   },
   {
     "id": 12,
@@ -93,7 +104,8 @@
     "model": "BeamNG.drive",
     "price": 330,
     "discount": 0,
-    "old": "29 мая. 2015"
+    "old": "29 мая. 2015",
+    "src": "./products/beamng.png"
   },
   {
     "id": 13,
@@ -101,7 +113,8 @@
     "model": "Forza Horizon 4",
     "price": 799,
     "discount": 0.2,
-    "old": "9 мар. 2021"
+    "old": "9 мар. 2021",
+    "src": "./products/forza.png"
   },
   {
     "id": 14,
@@ -109,7 +122,8 @@
     "model": "Spider-Man: Miles Morales",
     "price": 1499,
     "discount": 0.3,
-    "old": "18 ноя. 2022"
+    "old": "18 ноя. 2022",
+    "src": "./products/spider-man.png"
   },
   {
     "id": 15,
@@ -117,6 +131,7 @@
     "model": "Sonic Frontiers",
     "price": 1600,
     "discount": 0.4,
-    "old": "8 ноя. 2022"
+    "old": "8 ноя. 2022",
+    "src": "./products/sonic.png"
   }
 ]

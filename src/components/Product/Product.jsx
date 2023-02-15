@@ -5,10 +5,7 @@ import styles from "./Product.module.css";
 const Product = (props) => {
   return (
     <Card className="bg-white m-8 w-96 ">
-      <Card.Image
-        src="https://api.lorem.space/image/shoes?w=400&h=225"
-        alt="Shoes"
-      />
+      <Card.Image src={props.product.src} />
 
       <Card.Body>
         <Card.Title>
@@ -33,7 +30,10 @@ const Product = (props) => {
         </div>
 
         <Card.Actions>
-          <Button className="w-36" onClick={() => props.onBuyButtonClick(props.product)}>
+          <Button
+            className="w-36"
+            onClick={() => props.onBuyButtonClick(props.product)}
+          >
             Buy
           </Button>
         </Card.Actions>

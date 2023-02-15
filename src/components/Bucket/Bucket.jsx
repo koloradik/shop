@@ -1,6 +1,4 @@
 import { Button } from "react-daisyui";
-import { TiDeleteOutline } from "react-icons/ti";
-import styles from "./Bucket.module.css";
 
 const Bucket = (props) => {
   return (
@@ -12,14 +10,18 @@ const Bucket = (props) => {
               props.bucket.map((product) => {
                 return (
                   <div className="flex justify-between">
-                    <div className="text-2xl">{product.model}</div>
-                    
-                    <div>{product.amount}</div>
+                    <div className="flex">
+                      <div className="text-2xl">{product.model}</div>
+
+                      <div>{product.amount}</div>
+                    </div>
                     <div className="items-center flex">
-                    <Button size="xs"
-                      onClick={() => props.removeFromBucketById(product.id)}>
+                      <Button
+                        size="xs"
+                        onClick={() => props.removeFromBucketById(product.id)}
+                      >
                         X
-                    </Button>
+                      </Button>
                     </div>
                   </div>
                 );
