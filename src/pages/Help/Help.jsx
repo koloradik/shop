@@ -15,13 +15,14 @@ const Help = () => {
       <a className="flex justify-center link link-hover" href="https://maps.google.com/maps?q=48.555415,39.316354&ll=48.555415,39.316354&z=16">Отделение 2</a>
       <a className="flex justify-center link link-hover" href="https://maps.google.com/maps?q=17.058250,8.713251&ll=17.058250,8.713251&z=16">Отделение 3</a>
       <a className="flex justify-center link link-hover" href="https://maps.google.com/maps?q=31.580954,54.460642&ll=31.580954,54.460642&z=16">Отделение 4</a>
+      <a className="flex justify-center link link-hover" href="https://maps.google.com/maps?q=25.204504,55.242362&ll=25.204504,55.242362&z=16">Отделение 5</a>
       </div>
       <hr />
       <div className="flex justify-center text-2xl text-yellow-500 mt-4">
         Техподдержка
       </div>
       <div className="flex justify-center text-xl text-yellow-300">
-      Если вас обманули, взломали, купили товар от вашего имени НЕ звоните наэтот номер - 0983214578,
+      Если вас обманули, взломали, купили товар от вашего имени НЕ звоните наэтот номер - 0983214578
       </div>
       <div>
 

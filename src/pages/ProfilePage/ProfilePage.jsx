@@ -21,7 +21,6 @@ const ProfilePage = (props) => {
     }
 
     return <div>{props.name ? <div>
-
         <hr />
         <div className={styles.wrapper}>
             <img src="/User.png" alt="" className={styles.userimg} />

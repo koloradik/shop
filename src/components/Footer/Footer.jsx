@@ -12,7 +12,7 @@ const Footer = () => {
     //   </h3>
     // </div>
 
-    <DaisyFooter className="p-10 bg-neutral text-neutral-content">
+    <DaisyFooter className="p-10 bg-neutral text-neutral-content ">
       <div>
         {/* <DaisyFooter.Title>Services</DaisyFooter.Title>
         <a className="link link-hover">Branding</a>

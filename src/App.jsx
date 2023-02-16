@@ -11,7 +11,7 @@ import styles from "./App.module.css";
 import ProductPage from "./pages/Product/ProductPage";
 import SearchPage from "./pages/SearchPage/SearchPage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
-import { Button, Input, Modal, Table } from "react-daisyui";
+import { Button, Input, Modal } from "react-daisyui";
 
 const App = () => {
   // bucket states
@@ -127,7 +127,7 @@ const App = () => {
 
       <Footer />
 
-      <Modal open={showBucket} onClickBackdrop={toggleShowBucket}>
+      <Modal className="" open={showBucket} onClickBackdrop={toggleShowBucket}>
         <Modal.Header className="font-bold">Корзина:</Modal.Header>
 
         <Modal.Body>
