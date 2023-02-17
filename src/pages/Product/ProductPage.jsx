@@ -12,26 +12,19 @@ const ProductPage = (props) => {
         <div>ID этого товара: {product.id}</div>
       </div>
 
-<div>
-          <Carousel className="rounded-box">
-            <Carousel.Item
-              src="https://api.lorem.space/image/car?w=800&h=200&hash=8B7BCDC2"
-            />
-            <Carousel.Item
-              src="https://api.lorem.space/image/car?w=800&h=200&hash=500B67FB"
-            />
-            <Carousel.Item
-              src="https://api.lorem.space/image/car?w=800&h=200&hash=A89D0DE6"
-            />
-            <Carousel.Item
-              src=""
-            />
-          </Carousel>
-        </div>
+      <div className="w-[662px] ml-[25%]">
+        <Carousel className="rounded-box h-[337px]" display="numbered">
+
+          {
+            product.images.map(imgSrc => <Carousel.Item key={product.id} src={imgSrc} />)
+          }
+
+        </Carousel>
+      </div>
 
       <div className={styles.tow}>
         <div className={styles.nem}> {product.model} </div>
-        <Button className="bg-green-700 w-24 h-14 hover:bg-green-400">Buy</Button>
+        <Button className="bg-green-700 w-24 h-14 hover:bg-green-400" onClick={() => props.onBuyButtonClick(product)}>Buy</Button>
       </div>
 
       <hr className={styles.hr} />

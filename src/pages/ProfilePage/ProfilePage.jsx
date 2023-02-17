@@ -10,6 +10,7 @@ const ProfilePage = (props) => {
     const toggleBalansShow = () => {
         setBalansShow(prev => !prev)
     }
+
     const popoln = () => {
         const p = Number(balansP)
 
@@ -17,6 +18,7 @@ const ProfilePage = (props) => {
             props.setBalans(props.balans + p)
         }
 
+        localStorage.setItem("balans", props.balans + p)       
 
     }
 
@@ -33,11 +35,11 @@ const ProfilePage = (props) => {
         {balansShow === true ? <div>
             <Input
                 placeholder="Введите сумму пополнения"
-                className="bg-black"
+                className="bg-black w-60"
                 type="text" value={balansP}
                 onChange={(event) => setBalansP(event.target.value)}
             />
-             <Button className="bg-green-700 hover:bg-green-500" onClick={popoln}>Пополнить</Button>
+            <Button className="bg-green-700 hover:bg-green-500" onClick={popoln}>Пополнить</Button>
         </div> : null}
         <hr />
     </div> : <div className={styles.neavt}>Вы не авторизованы(</div>}

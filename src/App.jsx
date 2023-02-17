@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import products from "./database/products.json";
 import { Link, Route, Switch, useLocation } from "wouter";
 import Footer from "./components/Footer/Footer";
@@ -19,6 +19,14 @@ const App = () => {
   const [bucket, setBucket] = useState([]);
   const [showBucket, setShowBucket] = useState(false);
 
+  useEffect(() => {
+    const b = Number(localStorage.getItem("balans"))
+
+    if (b) {
+      setBalans(b)
+    }
+  }, [])
+
   const onBuyButtonClick = (product) => {
     const productInBucket = bucket.filter((el) => el.id === product.id).pop();
 
@@ -37,6 +45,13 @@ const App = () => {
   // auth states
   const [name, setName] = useState("");
   const [showAuth, setShowAuth] = useState(false);
+  useEffect(() => {
+    const n = localStorage.getItem("name")
+
+    if (n) {
+      setName(n)
+    }
+  }, [])
 
   const toggleShowAuth = () => {
     setShowAuth((prev) => !prev);
@@ -114,7 +129,7 @@ const App = () => {
           />
           <Route path="/help" component={Help} />
           <Route path="/product/:id">
-            {(params) => <ProductPage id={params.id} products={products} />}
+            {(params) => <ProductPage id={params.id} products={products} onBuyButtonClick={onBuyButtonClick}/>}
           </Route>
           <Route path="/search/:query">
             {(params) => <SearchPage query={search} products={products} />}

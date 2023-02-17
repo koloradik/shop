@@ -6,7 +6,12 @@
     "price": 279,
     "discount": 0,
     "old": "30 ноября 2000 г.",
-    "src": "./products/cossaks.png"
+    "src": "./products/cossaks.png",
+    "images": [
+      "./../img_in_products/Cosaks/1.png",
+      "./../img_in_products/Cosaks/2.png",
+      "./../img_in_products/Cosaks/3.png"
+    ]
   },
   {
     "id": 2,
@@ -87,6 +92,11 @@
     "price": 2339,
     "discount": 0,
     "old": "10 ноября 2009 г.",
+    "images": [
+      "src1",
+      "src2",
+      "sr"
+    ],
     "src": "./products/call_of_duty.png"
   },
   {
