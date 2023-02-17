@@ -22,9 +22,9 @@ const Footer = () => {
       </div>
       <div>
         <DaisyFooter.Title>Связь</DaisyFooter.Title>
-        <Link href="https://t.me/madou181_krasnodar" className="link link-hover text-blue-600">Telegram</Link>
-        <Link href="https://ru.wikipedia.org/wiki/Viber" className="link link-hover text-purple-600">Viber</Link>
-        <Link href="https://www.instagram.com/reel/Cm_r1X6hKS-/?igshid=MWMzM2Q4ZmE=" className="link link-hover text-pink-600">Instagram</Link>
+        <a href="https://t.me/madou181_krasnodar" className="link link-hover text-blue-600" target={"_blank"}>Telegram</a>
+        <a href="https://ru.wikipedia.org/wiki/Viber" className="link link-hover text-purple-600" target={"_blank"}>Viber</a>
+        <a href="https://www.instagram.com/reel/Cm_r1X6hKS-/?igshid=MWMzM2Q4ZmE=" className="link link-hover text-pink-600" target={"_blank"}>Instagram</a>
       </div>
       <div>
         <DaisyFooter.Title>Поддержка</DaisyFooter.Title>
