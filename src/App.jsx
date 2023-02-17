@@ -54,7 +54,7 @@ const App = () => {
     <div>
       <div className="bg-red-600 flex flex-wrap justify-between p-5">
         <Link href="/">
-          <h1 className="text-6xl font-semibold ml-2 text-black">GORA</h1>
+          <h1 className="text-6xl font-semibold ml-2 text-black hover:cursor-pointer">GORA</h1>
         </Link>
         <Input
           className="bg-neutral-800 text-lg"
@@ -83,17 +83,21 @@ const App = () => {
       <div>
         {location !== "/profile" ? (
           <div className={styles.bap}>
-            <Link href="/profile">
-              <Button className="ml-4 mt-4 bg-blue-700 hover:bg-blue-600">
+
+            <Button className="ml-4 mt-4 bg-blue-700 hover:bg-blue-600">
+              <Link href="/profile">
                 Profile
-              </Button>
-            </Link>
+              </Link>
+            </Button>
+
             <div>
               <Link href="/profile">
                 <div className="ml-4 mt-4 text-2xl mr-4">Баланс: {balans}</div>
               </Link>
               {location !== "/" ? null : (
-                <BucketButton toggleShowBucket={toggleShowBucket} />
+                <div className="flex justify-center">
+                  <BucketButton toggleShowBucket={toggleShowBucket} />
+                </div>
               )}
             </div>
           </div>
