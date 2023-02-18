@@ -5,12 +5,14 @@ import styles from "./Product.module.css";
 const Product = (props) => {
   return (
     <Card className="bg-white m-8 w-96 ">
-      <Card.Image src={props.product.src} />
+      <Card.Image src={props.product.src}
+        alt={props.product.model}
+        className="text-black"/>
 
       <Card.Body>
         <Card.Title>
           <Link href={`/product/${props.product.id}`}>
-            <span className="text-black">{props.product.model}</span>
+            <span className="text-black hover:cursor-pointer hover:underline">{props.product.model}</span>
           </Link>
         </Card.Title>
 
@@ -20,8 +22,7 @@ const Product = (props) => {
               <div className={styles.skidka}>{props.product.price}₴</div>
               <div className={styles.star}>
                 {props.product.price -
-                  props.product.price * props.product.discount}
-                ₴
+                  props.product.price * props.product.discount}₴
               </div>
             </div>
           ) : (

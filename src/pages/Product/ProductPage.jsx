@@ -12,14 +12,16 @@ const ProductPage = (props) => {
         <div>ID этого товара: {product.id}</div>
       </div>
 
-      <div className="w-[662px] ml-[25%]">
-        <Carousel className="rounded-box h-[337px]" display="numbered">
+      <div className="flex justify-center">
+        <div>
+          <Carousel className="rounded-box max-w-xl" display="numbered">
 
-          {
-            product.images.map(imgSrc => <Carousel.Item key={product.id} src={imgSrc} />)
-          }
+            {
+              product.images.map(imgSrc => <Carousel.Item key={product.id} src={imgSrc} />)
+            }
 
-        </Carousel>
+          </Carousel>
+        </div>
       </div>
 
       <div className={styles.tow}>

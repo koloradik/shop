@@ -20,7 +20,12 @@
     "price": 650,
     "discount": 0.1,
     "old": "17 сентября 2013 г.",
-    "src": "./products/gta v.png"
+    "src": "./products/gta v.png",
+    "images": [
+      "./../img_in_products/gta/1.png",
+      "./../img_in_products/gta/2.png",
+      "./../img_in_products/gta/3.png"
+    ]
   },
   {
     "id": 3,
@@ -29,7 +34,12 @@
     "price": 569,
     "discount": 0,
     "old": "23 июля 2015 г.",
-    "src": "./products/five_n_4.png"
+    "src": "./products/five_n_4.png",
+    "images": [
+      "./../img_in_products/five-n/1.png",
+      "./../img_in_products/five-n/2.png",
+      "./../img_in_products/five-n/3.png"
+    ]
   },
   {
     "id": 4,
@@ -38,7 +48,12 @@
     "price": 650,
     "discount": 0,
     "old": "11 декабря 2013 г.",
-    "src": "./products/rust.png"
+    "src":"./products/rust.png",
+    "images": [
+      "./../img_in_products/rust/1.png",
+      "./../img_in_products/rust/2.png",
+      "./../img_in_products/rust/3.png"
+    ]
   },
   {
     "id": 5,
@@ -47,7 +62,12 @@
     "price": 350,
     "discount": 0.2,
     "old": "26 сентября 2022 г.",
-    "src": "./products/fifa_23.png"
+    "src": "./products/fifa_23.png",
+    "images": [
+      "./../img_in_products/fifa-23/1.png",
+      "./../img_in_products/fifa-23/2.png",
+      "./../img_in_products/fifa-23/3.png"
+    ]
   },
   {
     "id": 6,
@@ -56,7 +76,12 @@
     "price": 230,
     "discount": 0,
     "old": "24 октября 2016 г.",
-    "src": "./products/my-summer-car.png"
+    "src":"./products/my-summer-car.png",
+    "images": [
+      "./../img_in_products/my-summer-car/1.png",
+      "./../img_in_products/my-summer-car/2.png",
+      "./../img_in_products/my-summer-car/3.png"
+    ]
   },
   {
     "id": 7,
@@ -65,7 +90,12 @@
     "price": 280,
     "discount": 0,
     "old": "14 мая 2013 г.",
-    "src": "./products/metro.png"
+    "src": "./products/metro.png",
+    "images": [
+      "./../img_in_products/metro/1.png",
+      "./../img_in_products/metro/2.png",
+      "./../img_in_products/metro/3.png"
+    ]
   },
   {
     "id": 8,
@@ -74,7 +104,12 @@
     "price": 865,
     "discount": 0,
     "old": "12 сентября 2013 г.",
-    "src": "./products/arma_iii.png"
+    "src": "./products/arma_iii.png",
+    "images": [
+      "./../img_in_products/arma-iii/1.png",
+      "./../img_in_products/arma-iii/2.png",
+      "./../img_in_products/arma-iii/3.png"
+    ]
   },
   {
     "id": 9,
@@ -83,7 +118,12 @@
     "price": 729,
     "discount": 0,
     "old": "21 ноября 2021 г.",
-    "src": "./products/f-s-22.png"
+    "src": "./products/f-s-22.png",
+    "images": [
+      "./../img_in_products/ferm-sim/1.png",
+      "./../img_in_products/ferm-sim/2.png",
+      "./../img_in_products/ferm-sim/3.png"
+    ]
   },
   {
     "id": 10,
@@ -92,12 +132,12 @@
     "price": 2339,
     "discount": 0,
     "old": "10 ноября 2009 г.",
+    "src": "./products/call_of_duty.png",
     "images": [
-      "src1",
-      "src2",
-      "sr"
-    ],
-    "src": "./products/call_of_duty.png"
+      "./../img_in_products/call-of-duty/1.png",
+      "./../img_in_products/call-of-duty/2.png",
+      "./../img_in_products/call-of-duty/3.png"
+    ]
   },
   {
     "id": 11,
@@ -106,7 +146,12 @@
     "price": 350,
     "discount": 0,
     "old": "10 ноября 2015 г.",
-    "src": "./products/fallout_4.png"
+    "src":"./products/fallout_4.png",
+    "images": [
+      "./../img_in_products/fallout-4/1.png",
+      "./../img_in_products/fallout-4/2.png",
+      "./../img_in_products/fallout-4/3.png"
+    ]
   },
   {
     "id": 12,
@@ -115,7 +160,12 @@
     "price": 330,
     "discount": 0,
     "old": "29 мая. 2015",
-    "src": "./products/beamng.png"
+    "src": "./products/beamng.png",
+    "images": [
+      "./../img_in_products/beamng/1.png",
+      "./../img_in_products/beamng/2.png",
+      "./../img_in_products/beamng/3.png"
+    ]
   },
   {
     "id": 13,
@@ -124,7 +174,12 @@
     "price": 799,
     "discount": 0.2,
     "old": "9 мар. 2021",
-    "src": "./products/forza.png"
+    "src":"./products/forza.png",
+    "images": [
+      "./../img_in_products/forza/1.png",
+      "./../img_in_products/forza/2.png",
+      "./../img_in_products/forza/3.png"
+    ]
   },
   {
     "id": 14,
@@ -133,7 +188,12 @@
     "price": 1499,
     "discount": 0.3,
     "old": "18 ноя. 2022",
-    "src": "./products/spider-man.png"
+    "src": "./products/spider-man.png",
+    "images": [
+      "./../img_in_products/spider-men/1.png",
+      "./../img_in_products/spider-men/2.png",
+      "./../img_in_products/spider-men/3.png"
+    ]
   },
   {
     "id": 15,
@@ -142,6 +202,11 @@
     "price": 1600,
     "discount": 0.4,
     "old": "8 ноя. 2022",
-    "src": "./products/sonic.png"
+    "src": "./products/sonic.png",
+    "images": [
+      "./../img_in_products/sonic/1.png",
+      "./../img_in_products/sonic/2.png",
+      "./../img_in_products/sonic/3.png"
+    ]
   }
 ]

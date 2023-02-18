@@ -1,0 +1,36 @@
+[
+    {
+        "id": 1,
+        "name": "Ivan",
+        "password": 4560,
+        "status": "Admin",
+        "avatar": "",
+        "balans": 1000000,
+        "bucket": [
+            {
+                "id": 1,
+                "type": "Strategy",
+                "model": "Cossacks 3",
+                "price": 279,
+                "discount": 0,
+                "old": "30 ноября 2000 г.",
+                "src": "./products/cossaks.png",
+                "images": [
+                    "./../img_in_products/Cosaks/1.png",
+                    "./../img_in_products/Cosaks/2.png",
+                    "./../img_in_products/Cosaks/3.png"
+                ],
+                "amount": 3
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "lexa",
+        "password": 7890,
+        "status": "Moder",
+        "avatar": "",
+        "balans": 1000000,
+        "bucket": []
+    }
+]
