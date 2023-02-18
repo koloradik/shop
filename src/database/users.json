@@ -2,7 +2,7 @@
     {
         "id": 1,
         "name": "Ivan",
-        "password": 4560,
+        "password": "4560",
         "status": "Admin",
         "avatar": "",
         "balans": 1000000,
@@ -26,11 +26,38 @@
     },
     {
         "id": 2,
-        "name": "lexa",
-        "password": 7890,
+        "name": "Lexa",
+        "password": "7890",
         "status": "Moder",
         "avatar": "",
         "balans": 1000000,
+        "bucket": []
+    },
+    {
+        "id": 3,
+        "name": "Nikitosik",
+        "password": "3369",
+        "status": "Moder",
+        "avatar": "",
+        "balans": 1000000,
+        "bucket": []
+    },
+    {
+        "id": 4,
+        "name": "T1myr",
+        "password": "1111",
+        "status": "Bomg",
+        "avatar": "",
+        "balans": -1000000,
+        "bucket": []
+    },
+    {
+        "id": 5,
+        "name": "Mariana",
+        "password": "3131",
+        "status": "Negr",
+        "avatar": "",
+        "balans": 0.15,
         "bucket": []
     }
 ]

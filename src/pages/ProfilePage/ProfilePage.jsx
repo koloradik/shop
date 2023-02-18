@@ -3,7 +3,6 @@ import { Button, Input } from "react-daisyui"
 import styles from "./ProfilePage.module.css"
 
 const ProfilePage = (props) => {
-    //const [balans, setBalans] = useState(0)
     const [balansShow, setBalansShow] = useState(false)
     const [balansP, setBalansP] = useState("")
 
@@ -18,7 +17,7 @@ const ProfilePage = (props) => {
             props.setBalans(props.balans + p)
         }
 
-        localStorage.setItem("balans", props.balans + p)       
+        localStorage.setItem("balans", props.balans + p)
 
     }
 
@@ -26,7 +25,11 @@ const ProfilePage = (props) => {
         <hr />
         <div className={styles.wrapper}>
             <img src="/User.png" alt="" className={styles.userimg} />
-            <div className={styles.name}>Имя: {props.name}</div>
+
+            <div className="ml-16 text-3xl">
+                <div className="mt-6">Имя: {props.name}</div>
+                <div className="mt-4">Статус: {props.status}</div>
+            </div>
 
         </div>
         <hr />

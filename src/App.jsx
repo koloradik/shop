@@ -12,10 +12,13 @@ import ProductPage from "./pages/Product/ProductPage";
 import SearchPage from "./pages/SearchPage/SearchPage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import { Button, Input, Modal } from "react-daisyui";
+import { FaUserAlt } from "react-icons/fa";
+import users from "./database/users.json";
 
 const App = () => {
   // bucket states
   const [balans, setBalans] = useState(0);
+
   const [bucket, setBucket] = useState([]);
   const [showBucket, setShowBucket] = useState(false);
 
@@ -44,7 +47,13 @@ const App = () => {
 
   // auth states
   const [name, setName] = useState("");
+  const [status, setStatus] = useState("");
+
+  const [inputName, setInputName] = useState("")
+  const [inputPassword, setInputPassword] = useState("")
+
   const [showAuth, setShowAuth] = useState(false);
+
   useEffect(() => {
     const n = localStorage.getItem("name")
 
@@ -52,6 +61,27 @@ const App = () => {
       setName(n)
     }
   }, [])
+
+  const auth = () => {
+
+    const user = users.filter(u => {
+      return u.name === inputName && 
+      u.password === inputPassword 
+    }).pop()
+
+    if (user) {
+      setName(user.name)
+      localStorage.setItem("name",user.name)
+      setBalans(user.balans)
+      localStorage.setItem("balans",user.balans)
+      setStatus(user.status)
+      localStorage.setItem("status",user.status)
+
+      toggleShowAuth()
+    }
+
+
+  };
 
   const toggleShowAuth = () => {
     setShowAuth((prev) => !prev);
@@ -87,12 +117,45 @@ const App = () => {
           }}
         />
 
-        <Auth
+        {/* <Auth
           name={name}
           setName={setName}
           showAuth={showAuth}
           toggleShowAuth={toggleShowAuth}
-        />
+        /> */}
+
+        <Button onClick={toggleShowAuth}
+          className="h-16 bg-neutral-800 hover:bg-neutral-800">
+          <FaUserAlt size={40} />
+        </Button>
+
+        <Modal open={showAuth}>
+          <Modal.Header className="font-bold">
+            Авторизация
+          </Modal.Header>
+
+          <Modal.Body>
+            <div className="flex flex-col space-y-4 items-center text-xl">
+              <div>
+                <div>Имя:</div>
+                <Input className="focus:text-xl" placeholder="Введите ваше имя" 
+                value={inputName} onChange={e => setInputName(e.target.value)}/>
+              </div>
+
+              <div>
+                <div>Пароль:</div>
+                <Input className="focus:text-xl" placeholder="Введите ваш пароль"
+                 value={inputPassword} onChange={e => setInputPassword(e.target.value)}/>
+              </div>
+            </div>
+          </Modal.Body>
+
+          <Modal.Actions>
+            <Button onClick={auth}>Войти</Button>
+            <Button onClick={toggleShowAuth}>Закрыть</Button>
+          </Modal.Actions>
+        </Modal>
+
       </div>
 
       <div>
@@ -129,7 +192,7 @@ const App = () => {
           />
           <Route path="/help" component={Help} />
           <Route path="/product/:id">
-            {(params) => <ProductPage id={params.id} products={products} onBuyButtonClick={onBuyButtonClick}/>}
+            {(params) => <ProductPage id={params.id} products={products} onBuyButtonClick={onBuyButtonClick} />}
           </Route>
           <Route path="/search/:query">
             {(params) => <SearchPage query={search} products={products} />}
@@ -138,7 +201,7 @@ const App = () => {
           <Route
             path="/profile"
             component={() => (
-              <ProfilePage balans={balans} setBalans={setBalans} name={name} />
+              <ProfilePage balans={balans} setBalans={setBalans} name={name} status={status}/>
             )}
           />
         </Switch>
