@@ -11,24 +11,41 @@ import styles from "./App.module.css";
 import ProductPage from "./pages/Product/ProductPage";
 import SearchPage from "./pages/SearchPage/SearchPage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
-import { Button, Input, Modal } from "react-daisyui";
+import { Button, Input, Modal, Tooltip } from "react-daisyui";
 import { FaUserAlt } from "react-icons/fa";
 import users from "./database/users.json";
 
 const App = () => {
   // bucket states
+  const [surname, setSurname] = useState("")
+
+  const [email, setEmail] = useState("")
+
   const [balans, setBalans] = useState(0);
+
+  const [showOf, setShowOf] = useState(false)
+
+  const toggleShowOf = () => {
+    setShowOf((prev) => !prev);
+  };
 
   const [bucket, setBucket] = useState([]);
   const [showBucket, setShowBucket] = useState(false);
+  let totalAmount = 0
 
-  useEffect(() => {
-    const b = Number(localStorage.getItem("balans"))
+  for (let i = 0; i < bucket.length; i++) {
+    totalAmount += bucket[i].price * bucket[i].amount
+  }
 
-    if (b) {
-      setBalans(b)
+  const changeAmount = (amount, product) => {
+    const productInBucket = bucket.filter((el) => el.id === product.id).pop();
+
+    if (productInBucket) {
+      productInBucket.amount = amount;
+      setBucket((prev) => [...prev]);
     }
-  }, [])
+    localStorage.setItem("bucket", JSON.stringify(bucket))
+  }
 
   const onBuyButtonClick = (product) => {
     const productInBucket = bucket.filter((el) => el.id === product.id).pop();
@@ -39,10 +56,15 @@ const App = () => {
     } else {
       setBucket((prev) => [...prev, { ...product, amount: 1 }]);
     }
+    localStorage.setItem("bucket", JSON.stringify(bucket))
   };
 
   const removeFromBucketById = (productId) => {
-    setBucket((prev) => prev.filter((p) => p.id !== productId));
+    setBucket((prev) => {
+      const newBucket = prev.filter((p) => p.id !== productId)
+      localStorage.setItem("bucket", JSON.stringify(newBucket))
+      return newBucket
+    });
   };
 
   // auth states
@@ -56,26 +78,41 @@ const App = () => {
 
   useEffect(() => {
     const n = localStorage.getItem("name")
+    const b = Number(localStorage.getItem("balans"))
+    const s = localStorage.getItem("status")
+    const c = JSON.parse(localStorage.getItem("bucket"))
+
+    if (b) {
+      setBalans(b)
+    }
 
     if (n) {
       setName(n)
+    }
+
+    if (s) {
+      setStatus(s)
+    }
+
+    if (c) {
+      setBucket(c)
     }
   }, [])
 
   const auth = () => {
 
     const user = users.filter(u => {
-      return u.name === inputName && 
-      u.password === inputPassword 
+      return u.name === inputName &&
+        u.password === inputPassword
     }).pop()
 
     if (user) {
       setName(user.name)
-      localStorage.setItem("name",user.name)
+      localStorage.setItem("name", user.name)
       setBalans(user.balans)
-      localStorage.setItem("balans",user.balans)
+      localStorage.setItem("balans", user.balans)
       setStatus(user.status)
-      localStorage.setItem("status",user.status)
+      localStorage.setItem("status", user.status)
 
       toggleShowAuth()
     }
@@ -138,14 +175,14 @@ const App = () => {
             <div className="flex flex-col space-y-4 items-center text-xl">
               <div>
                 <div>Имя:</div>
-                <Input className="focus:text-xl" placeholder="Введите ваше имя" 
-                value={inputName} onChange={e => setInputName(e.target.value)}/>
+                <Input className="focus:text-xl" placeholder="Введите ваше имя"
+                  value={inputName} onChange={e => setInputName(e.target.value)} />
               </div>
 
               <div>
                 <div>Пароль:</div>
-                <Input className="focus:text-xl" placeholder="Введите ваш пароль"
-                 value={inputPassword} onChange={e => setInputPassword(e.target.value)}/>
+                <Input type={"password"} className="focus:text-xl" placeholder="Введите ваш пароль"
+                  value={inputPassword} onChange={e => setInputPassword(e.target.value)} />
               </div>
             </div>
           </Modal.Body>
@@ -170,7 +207,7 @@ const App = () => {
 
             <div>
               <Link href="/profile">
-                <div className="ml-4 mt-4 text-2xl mr-4">Баланс: {balans}</div>
+                <div className="ml-4 mt-4 text-2xl mr-4">Баланс: {balans}₴</div>
               </Link>
               {location !== "/" ? null : (
                 <div className="flex justify-center">
@@ -201,7 +238,7 @@ const App = () => {
           <Route
             path="/profile"
             component={() => (
-              <ProfilePage balans={balans} setBalans={setBalans} name={name} status={status}/>
+              <ProfilePage balans={balans} setBalans={setBalans} name={name} status={status} />
             )}
           />
         </Switch>
@@ -217,12 +254,58 @@ const App = () => {
             bucket={bucket}
             isAuth={Boolean(name)}
             removeFromBucketById={removeFromBucketById}
+            changeAmount={changeAmount}
           />
         </Modal.Body>
-        <Modal.Actions>
-          <Button onClick={toggleShowBucket}>Закрыть</Button>
+        <Modal.Actions className="flex justify-between items-center">
+          <div>{bucket.length > 0 ?
+            <p className="text-xl">
+              Итого: {totalAmount}₴
+            </p> : null}</div>
+
+          <div className="space-x-2">
+            <Button disabled={balans < totalAmount || totalAmount === 0}
+              onClick={() => {
+                toggleShowBucket()
+                toggleShowOf()
+              }}>
+              Оформить заказ
+            </Button>
+            <Button onClick={toggleShowBucket}>Закрыть</Button>
+          </div>
         </Modal.Actions>
       </Modal>
+
+      {/* <Modal
+        className="w-11/12 max-w-5xl bg-white text-black"
+        open={showOf}
+        onClickBackdrop={toggleShowOf}>
+
+        <Modal.Header className="font-bold flex justify-between items-center text-2xl">
+          <div>Оформление вашего заказа:</div>
+          <Button onClick={toggleShowOf} className="w-12 bg-black">X</Button>
+        </Modal.Header>
+        <Modal.Body>
+          <div className="text-xl">
+            Контрактная информация:
+            <div>Имя: <Input value={name} className="bg-neutral-300" /></div>
+            <div>Фамилия: <Input
+
+              placeholder="Oбязательно*"
+              className="bg-neutral-300"
+              onChange={e => setSurname(e.target.value)} /></div>
+          </div>
+          <div><Tooltip message="Чтобы прислать вам чек">Email</Tooltip>:
+            <Input
+            type={email}
+              placeholder="Oбязательно*"
+              className="bg-neutral-300"
+              onChange={e => setEmail(e.target.value)} /></div>
+        </Modal.Body>
+        <Modal.Actions>
+
+        </Modal.Actions>
+      </Modal> */}
     </div>
   );
 };

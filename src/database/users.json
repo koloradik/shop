@@ -6,23 +6,7 @@
         "status": "Admin",
         "avatar": "",
         "balans": 1000000,
-        "bucket": [
-            {
-                "id": 1,
-                "type": "Strategy",
-                "model": "Cossacks 3",
-                "price": 279,
-                "discount": 0,
-                "old": "30 ноября 2000 г.",
-                "src": "./products/cossaks.png",
-                "images": [
-                    "./../img_in_products/Cosaks/1.png",
-                    "./../img_in_products/Cosaks/2.png",
-                    "./../img_in_products/Cosaks/3.png"
-                ],
-                "amount": 3
-            }
-        ]
+        "bucket": []
     },
     {
         "id": 2,
@@ -30,7 +14,7 @@
         "password": "7890",
         "status": "Moder",
         "avatar": "",
-        "balans": 1000000,
+        "balans": 100,
         "bucket": []
     },
     {
@@ -39,7 +23,7 @@
         "password": "3369",
         "status": "Moder",
         "avatar": "",
-        "balans": 1000000,
+        "balans": 100,
         "bucket": []
     },
     {
@@ -48,7 +32,7 @@
         "password": "1111",
         "status": "Bomg",
         "avatar": "",
-        "balans": -1000000,
+        "balans": -10,
         "bucket": []
     },
     {
@@ -57,7 +41,16 @@
         "password": "3131",
         "status": "Negr",
         "avatar": "",
-        "balans": 0.15,
+        "balans": 0.015,
+        "bucket": []
+    },
+    {
+        "id": 6,
+        "name": "Egor",
+        "password": "4745",
+        "status": "Частый покупатель",
+        "avatar": "",
+        "balans": 278,
         "bucket": []
     }
 ]
