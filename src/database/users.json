@@ -52,5 +52,14 @@
         "avatar": "",
         "balans": 278,
         "bucket": []
+    },
+    {
+        "id": 7,
+        "name": "Denis",
+        "password": "0000",
+        "status": "Moder",
+        "avatar": "",
+        "balans": 500,
+        "bucket": []
     }
 ]

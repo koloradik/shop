@@ -4,8 +4,18 @@ import styles from "./ProfilePage.module.css"
 
 const ProfilePage = (props) => {
     const [balansShow, setBalansShow] = useState(false)
-    const [balansP, setBalansP] = useState("")
     const [dkShow, setDkShow] = useState(false)
+    const [sumShow, setSumShow] = useState(false)
+
+    const [balansP, setBalansP] = useState("")
+
+    const [nomer, setNomer] = useState("")
+    const [srok, setSrok] = useState("")
+    const [cvv, setCvv] = useState("")
+
+    const toggleSumShow = () => {
+        setSumShow(prev => !prev)
+    }
 
     const toggleDkShow = () => {
         setDkShow(prev => !prev)
@@ -40,7 +50,7 @@ const ProfilePage = (props) => {
         <hr />
         <div className={styles.tekb}>Текущий баланс: {props.balans}₴</div>
         <Button className="bg-blue-700 hover:bg-blue-500 ml-49" onClick={toggleBalansShow}>Пополнить баланс</Button>
-        {balansShow === true ? <div>
+        <div>
             <Modal
                 open={balansShow}
                 onClickBackdrop={toggleBalansShow}
@@ -94,8 +104,8 @@ const ProfilePage = (props) => {
                     <Button
                         className="bg-blue-500 hover:bg-blue-500"
                         onClick={() => {
-                            toggleBalansShow(false)
-                            toggleDkShow(true)
+                            toggleBalansShow()
+                            toggleDkShow()
                         }}
                     >
                         Далее
@@ -105,19 +115,80 @@ const ProfilePage = (props) => {
             <Modal
                 open={dkShow}
                 onClickBackdrop={toggleDkShow}
+                className="bg-white h-96"
             >
                 <Modal.Header>
-
+                    <Steps className="text-black flex justify-center">
+                        <Steps.Step color="info"></Steps.Step>
+                        <Steps.Step color="info"></Steps.Step>
+                        <Steps.Step></Steps.Step>
+                    </Steps>
                 </Modal.Header>
                 <Modal.Body>
+                    <div className="text-black">
+                        <div>
+                            <div className="text-lg" placeholder="**** **** **** ****">Номер карти:</div>
+                            <Input className="bg-white border border-black h-9" />
+                        </div>
+                        <div>
+                            <div className="text-lg">Срок действия:</div>
+                            <Input className="bg-white border border-black h-9" />
+                        </div>
+                        <div>
+                            <div className="text-lg">CVV:</div>
+                            <Input type={"password"} className="bg-white border border-black h-9" />
+                        </div>
+                    </div>
+                </Modal.Body>
+                <Modal.Actions>
+                    <Button
+                        className="bg-blue-500 hover:bg-blue-500"
+                        onClick={() => {
+                            toggleDkShow()
+                            toggleSumShow()
+                        }}
+                    >
+                        Далее
+                    </Button>
+                </Modal.Actions>
+            </Modal>
 
+            <Modal
+                open={sumShow}
+                onClickBackdrop={toggleSumShow}
+                className="bg-white"
+            >
+                <Modal.Header>
+                    <Steps className="text-black flex justify-center">
+                        <Steps.Step color="info"></Steps.Step>
+                        <Steps.Step color="info"></Steps.Step>
+                        <Steps.Step color="info"></Steps.Step>
+                    </Steps>
+                </Modal.Header>
+                <Modal.Body>
+                    <div className="flex justify-center">
+                        <Input
+                            placeholder="Введите сумму пополнения"
+                            className="bg-white w-60 border border-black text-black"
+                            type="text" value={balansP}
+                            onChange={(event) => setBalansP(event.target.value)}
+                        />
+                        <Button
+                            className="
+                        ml-5
+                    bg-green-700 
+                    hover:bg-green-500"
+                            onClick={popoln}>
+                            Пополнить
+                        </Button>
+                    </div>
                 </Modal.Body>
                 <Modal.Actions>
 
                 </Modal.Actions>
             </Modal>
 
-        </div> : null}
+        </div>
         <hr />
     </div> : <div className={styles.neavt}>Вы не авторизованы(</div>}
 
