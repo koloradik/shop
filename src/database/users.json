@@ -5,7 +5,7 @@
         "password": "4560",
         "status": "Admin",
         "avatar": "",
-        "balans": 1000000,
+        "balans": 1000,
         "bucket": []
     },
     {
@@ -14,7 +14,7 @@
         "password": "7890",
         "status": "Moder",
         "avatar": "",
-        "balans": 100,
+        "balans": 500,
         "bucket": []
     },
     {

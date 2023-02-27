@@ -11,9 +11,10 @@ import styles from "./App.module.css";
 import ProductPage from "./pages/Product/ProductPage";
 import SearchPage from "./pages/SearchPage/SearchPage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
-import { Button, Input, Modal, Tooltip } from "react-daisyui";
+import { Badge, Button, Collapse, Divider, Input, Modal, Tooltip, WindowMockup } from "react-daisyui";
 import { FaUserAlt } from "react-icons/fa";
 import users from "./database/users.json";
+import Product from "./components/Product/Product";
 
 const App = () => {
   // bucket states
@@ -22,6 +23,8 @@ const App = () => {
   const [email, setEmail] = useState("")
 
   const [balans, setBalans] = useState(0);
+
+  const [showK, setShowK] = useState(false)
 
   const [showOf, setShowOf] = useState(false)
 
@@ -36,6 +39,8 @@ const App = () => {
   for (let i = 0; i < bucket.length; i++) {
     totalAmount += bucket[i].price * bucket[i].amount
   }
+
+  const discountP = bucket.filter((product) => product.discount > 0)
 
   const changeAmount = (amount, product) => {
     const productInBucket = bucket.filter((el) => el.id === product.id).pop();
@@ -52,9 +57,19 @@ const App = () => {
 
     if (productInBucket) {
       productInBucket.amount += 1;
-      setBucket((prev) => [...prev]);
+      setBucket((prev) => {
+        const newBucket = [...prev]
+        localStorage.setItem("bucket", JSON.stringify(newBucket))
+        return newBucket
+      });
     } else {
-      setBucket((prev) => [...prev, { ...product, amount: 1 }]);
+      setBucket((prev) => {
+        const newBucket = [...prev, { ...product, amount: 1 }]
+        localStorage.setItem("bucket", JSON.stringify(newBucket))
+        return newBucket
+      });
+
+
     }
     localStorage.setItem("bucket", JSON.stringify(bucket))
   };
@@ -126,6 +141,10 @@ const App = () => {
 
   const toggleShowBucket = () => {
     setShowBucket((prev) => !prev);
+  };
+
+  const toggleShowK = () => {
+    setShowK((prev) => !prev);
   };
 
   // search states
@@ -247,8 +266,9 @@ const App = () => {
       <Footer />
 
       <Modal className="" open={showBucket} onClickBackdrop={toggleShowBucket}>
-        <Modal.Header className="font-bold">Корзина:</Modal.Header>
-
+        <Modal.Header className="font-bold flex justify-between items-center">Корзина:
+          <Button onClick={toggleShowBucket}>Закрыть</Button>
+        </Modal.Header>
         <Modal.Body>
           <Bucket
             bucket={bucket}
@@ -271,12 +291,11 @@ const App = () => {
               }}>
               Оформить заказ
             </Button>
-            <Button onClick={toggleShowBucket}>Закрыть</Button>
           </div>
         </Modal.Actions>
       </Modal>
 
-      {/* <Modal
+      <Modal
         className="w-11/12 max-w-5xl bg-white text-black"
         open={showOf}
         onClickBackdrop={toggleShowOf}>
@@ -286,26 +305,89 @@ const App = () => {
           <Button onClick={toggleShowOf} className="w-12 bg-black">X</Button>
         </Modal.Header>
         <Modal.Body>
-          <div className="text-xl">
-            Контрактная информация:
-            <div>Имя: <Input value={name} className="bg-neutral-300" /></div>
-            <div>Фамилия: <Input
+          <div className="text-xl">Контрактная информация:</div>
+          <div className="flex justify-around items-center ml-10">
+            <div className="text-xl">
+              <div>
+                <label className="label">Имя:</label>
+                <Input value={name} readOnly className="bg-neutral-300" />
 
-              placeholder="Oбязательно*"
-              className="bg-neutral-300"
-              onChange={e => setSurname(e.target.value)} /></div>
+              </div>
+
+              <div className="mt-1">
+                <label className="label">Фамилия: </label>
+                <Input
+                  placeholder="Oбязательно*"
+                  className="bg-neutral-300"
+                  onChange={e => setSurname(e.target.value)} />
+              </div>
+
+              <div className="mt-1">
+                <label className="label">
+                  <Tooltip message="Чтобы прислать вам чек, и ключи от купленных вами игр." color="error">
+                    <div>Email: </div>
+                  </Tooltip>
+                </label>
+                <Input
+                  type={email}
+                  placeholder="Oбязательно*"
+                  className="bg-neutral-300"
+                  onChange={e => setEmail(e.target.value)} />
+              </div>
+            </div>
+            <div className="border-2 border-black rounded-2xl">
+              <div className="px-4 py-16 w-96 text-xl space-y-4">
+                <div className="flex justify-between p-4">
+                  <div>Товары</div>
+                  <span>{totalAmount}₴</span>
+                </div>
+                <div className="flex justify-between p-4">
+                  <div>Комиссия:</div>
+                  <div className="text-orange-400">3%</div>
+                </div>
+                <Collapse icon="arrow" >
+                  <Collapse.Title>Скидка:</Collapse.Title>
+                  <Collapse.Content>
+                    {bucket.map((product) => <div key={product.id} className="flex justify-between opacity-75">
+                      <div>{product.model}</div>
+                      <div className={product.discount > 0 ? `font-semibold text-green-700` : null}>{product.discount * 100}%</div>
+                    </div>)}
+                  </Collapse.Content>
+                </Collapse>
+              </div>
+              <div className="text-center pb-9 text-3xl font-semibold">
+                <Tooltip message="Итоговая сумма" color="error">{Math.round(totalAmount * 1.03)}</Tooltip>
+              </div>
+            </div>
           </div>
-          <div><Tooltip message="Чтобы прислать вам чек">Email</Tooltip>:
-            <Input
-            type={email}
-              placeholder="Oбязательно*"
-              className="bg-neutral-300"
-              onChange={e => setEmail(e.target.value)} /></div>
         </Modal.Body>
-        <Modal.Actions>
-
+        <Modal.Actions className="flex items-center justify-center mt-10">
+          <Button disabled={!surname || !email}
+            onClick={() => {
+              toggleShowOf()
+              toggleShowK()
+              { balans - totalAmount }
+            }}
+            className="bg-black"
+          >Подтвердить заказ
+          </Button>
         </Modal.Actions>
-      </Modal> */}
+      </Modal>
+
+      <Modal
+        open={showK}
+        onClickBackdrop={toggleShowK}
+        className="
+        bg-white 
+        border 
+        border-black">
+        <Modal.Header>
+          <div className="text-black flex justify-center font-bold">Благодарим за покупку</div>
+        </Modal.Header>
+        <Modal.Body className="font-semibold text-xl">
+          <div className="text-black">Чек и Ключи от игр будут отправленны на Email<span className="text-orange-500">(Указаный ранее)</span></div>
+        </Modal.Body>
+      </Modal>
     </div>
   );
 };
