@@ -127,7 +127,7 @@ const ProfilePage = (props) => {
                 <Modal.Body>
                     <div className="text-black">
                         <div>
-                            <div className="text-lg" placeholder="**** **** **** ****">Номер карти:</div>
+                            <div className="text-lg" placeholder="**** **** **** ****">Номер карты:</div>
                             <Input className="bg-white border border-black h-9" />
                         </div>
                         <div>
