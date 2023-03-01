@@ -366,7 +366,6 @@ const App = () => {
             onClick={() => {
               toggleShowOf()
               toggleShowK()
-              { balans - totalAmount }
             }}
             className="bg-black"
           >Подтвердить заказ
